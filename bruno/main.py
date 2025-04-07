@@ -1,8 +1,8 @@
 import click
 
 @click.command()
-def hello():
+def cli():
     click.echo("Hello Bruno")
 
 if __name__ == '__main__':
-    hello()
+    cli()

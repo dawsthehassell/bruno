@@ -1,19 +1,39 @@
-# Ignore the virtual environment
-venv/
-
-# Ignore Python cache files
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
 
-# Ignore API keys and environment files
-config.py
-.env
+# Virtual environment
+venv/
+.env/
 
-# Ignore dependency logs
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Ignore system-specific files
-.DS_Store 
-Thumbs.db  
+# Unit test / coverage
+htmlcov/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
+
+# Mac
+.DS_Store
+
+# Python dotenv
+.env
