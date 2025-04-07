@@ -1,0 +1,19 @@
+# Ignore the virtual environment
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore API keys and environment files
+config.py
+.env
+
+# Ignore dependency logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore system-specific files
+.DS_Store 
+Thumbs.db  
