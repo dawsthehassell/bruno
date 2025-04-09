@@ -1,0 +1,13 @@
+{
+    "restaurant": [
+        {
+            "name": "name",
+            "location": "location",
+            "food_ordered": "food ordered",
+            "likes": "likes",
+            "dislikes": "dislikes",
+            "rating": "rating",
+            "visit_again": true
+        }
+    ]
+}
