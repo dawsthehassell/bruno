@@ -12,7 +12,7 @@ def view_entries():
             temp = json.load(f)
             for category, entries in temp.items():
                 print(f"\nCategory: {category}")
-                for entry in temp:
+                for entry in entries:
                     name = entry["name"]
                     location = entry["location"]
                     food_ordered = entry["food_ordered"]
@@ -27,7 +27,7 @@ def view_entries():
                     print(f"Dislikes of experience: {dislikes}")
                     print(f"Rating of experience: {rating}")
                     print(f"Visit again?: {visit_again}")
-                    print("\n\n")
+                    print("\n")
     
     except FileNotFoundError:
         click.echo("No entries found.")
