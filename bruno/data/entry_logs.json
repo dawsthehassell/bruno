@@ -1,13 +1,24 @@
 {
-    "restaurant": [
-        {
-            "name": "name",
-            "location": "location",
-            "food_ordered": "food ordered",
-            "likes": "likes",
-            "dislikes": "dislikes",
-            "rating": "rating",
-            "visit_again": true
-        }
-    ]
+  "restaurant": [
+    {
+      "name": "name",
+      "location": "location",
+      "food_ordered": "food ordered",
+      "likes": "likes",
+      "dislikes": "dislikes",
+      "rating": "rating",
+      "visit_again": true
+    }
+  ],
+  "coffee shop": [
+    {
+      "name": "Starbucks",
+      "location": "Beltway 8 & West Rd",
+      "food_ordered": "Iced Coffee",
+      "likes": "Cheap-ish",
+      "dislikes": "Dull taste",
+      "rating": "3.5",
+      "visit_again": true
+    }
+  ]
 }

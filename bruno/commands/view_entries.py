@@ -9,8 +9,8 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 def view_entries():
     try:
         with open(DATA_PATH, "r") as f:
-            temp = json.load(f)
-            for category, entries in temp.items():
+            data = json.load(f)
+            for category, entries in data.items():
                 print(f"\nCategory: {category}")
                 for entry in entries:
                     name = entry["name"]
