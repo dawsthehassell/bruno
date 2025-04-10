@@ -20,5 +20,16 @@
       "rating": "3.5",
       "visit_again": true
     }
+  ],
+  "bar": [
+    {
+      "name": "Axelrad",
+      "location": "Midtown, Houston",
+      "food_ordered": "Beers",
+      "likes": "Outdoors, live music, live events, pizza nearby",
+      "dislikes": "Can be quite busy at times",
+      "rating": "4.5",
+      "visit_again": true
+    }
   ]
 }
