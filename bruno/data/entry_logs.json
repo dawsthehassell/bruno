@@ -19,6 +19,16 @@
       "dislikes": "Dull taste",
       "rating": "3.5",
       "visit_again": true
+    },
+    {
+      "name": "Black Rock Coffee",
+      "date": "Sometime April 2025",
+      "location": "Highway 6 & 290",
+      "drink_ordered": "Irish Coffee",
+      "seating_availability": true,
+      "study_work_friendly": true,
+      "rating": "4.25",
+      "visit_again": true
     }
   ],
   "bar": [
