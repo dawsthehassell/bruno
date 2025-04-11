@@ -1,12 +1,12 @@
 {
   "restaurant": [
     {
-      "name": "name",
-      "location": "location",
-      "food_ordered": "food ordered",
-      "likes": "likes",
-      "dislikes": "dislikes",
-      "rating": "rating",
+      "name": "Chipotle",
+      "location": "Beltway 8 & West Rd",
+      "food_ordered": "chicken bowl",
+      "likes": "always hits, feels healthy",
+      "dislikes": "costs $10",
+      "rating": "4",
       "visit_again": true
     }
   ],
