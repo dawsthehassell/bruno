@@ -10,6 +10,7 @@ def cli():
 cli.add_command(view_entries)
 cli.add_command(new)
 cli.add_command(search_entries)
+# hehe
 
 if __name__ == '__main__':
     cli()
