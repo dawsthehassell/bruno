@@ -29,6 +29,20 @@
       "study_work_friendly": true,
       "rating": "4.25",
       "visit_again": true
+    },
+    {
+      "name": "Understory - Boomtown Coffee",
+      "date": "April 14 2025",
+      "location": "Downtown Houston",
+      "company": "Joe & Annie",
+      "drink_ordered": "The Crud",
+      "seating_availability": true,
+      "study_work_friendly": true,
+      "rating": "3.75",
+      "visit_again": true,
+      "tags": [
+        "#group #  #solo"
+      ]
     }
   ],
   "bar": [

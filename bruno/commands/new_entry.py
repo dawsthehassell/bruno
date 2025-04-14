@@ -19,6 +19,7 @@ def new():
         "restaurant": [
             ("name", "Name of the new restaurant: "),
             ("date", "Date of new restaurant visit: "),
+            ("company", "Were you with anyone? If so, who?: "),
             ("location", "Location: "),
             ("food_ordered", "Food/Drink ordered here: "),
             ("likes", "What did you like about this restuarant experience?: "),
@@ -30,6 +31,7 @@ def new():
             ("name", "Name of new bar: "),
             ("date", "Date of new bar visit: "),
             ("location", "Location: "),
+            ("company", "Were you with anyone? If so, who?: "),
             ("drink_ordered", "Drink/food ordered here: "),
             ("live_events", "Were there live events or music happening (and if so, what?): "),
             ("dislikes", "What did you not like about this bar experience?: "),
@@ -41,16 +43,18 @@ def new():
             ("name", "Name of the new coffee shop: "),
             ("date", "Date of new coffee shop visit: "),
             ("location", "Location: "),
+            ("company", "Were you with anyone? If so, who?: "),
             ("drink_ordered", "Drink/food ordered here: "),
             ("seating_availability", "Was there enough seating availability to stay here? (yes/no): "),
             ("study_work_friendly", "Is this a work/study friendly spot? (yes/no): "),
-            ("rating", "What would you rate the restaurant out of 5?: "),
+            ("rating", "What would you rate the coffee shop out of 5?: "),
             ("visit_again", "Would you visit again? (yes/no): "),
         ],
         "park": [
             ("name", "Name of the new park: "),
             ("date", "Date of new park visit: "),
             ("location", "Location: "),
+            ("company", "Were you with anyone? If so, who?: "),
             ("activities", "What did you do while here?: "),
             ("other_activities", "What other activities can you do at this park?: "),
             ("running", "Is there a trail or path to run on? (yes/no): "),
@@ -61,6 +65,7 @@ def new():
             ("name", "Name of the new library: "),
             ("date", "Date of new library visit: "),
             ("location", "Location: "),
+            ("company", "Were you with anyone? If so, who?: "),
             ("reason", "What was the reason for the visit? (study, browse, etc.): "),
             ("seating_availability", "Was there enough seating availability to stay here? (yes/no): "),
             ("study_work_friendly", "Is this a work/study friendly spot? (yes/no): "),
@@ -72,6 +77,7 @@ def new():
             ("date", "Date of new event: "),
             ("type", "What was this type of event?: "),
             ("location", "Location of event: "),
+            ("company", "Were you with anyone? If so, who?: "),
             ("persons", "Who did you attend the event with?: "),
             ("highlight", "What were the highlights?: "),
             ("rating", "What do you rate the experience out of 5?: "),
@@ -98,6 +104,11 @@ def new():
                 new_entry[field] = response == "yes"
             else:
                 new_entry[field] = input(f"{message}")
+
+    tags_input = input("Any hashtags or favorites? (ex: #fav, #group) (comma-separated, optional): ").strip()
+    if tags_input:
+        tags = [tag.strip() for tag in tags_input.split(",")]
+        new_entry["tags"] = tags
 
     if category not in data:
         data[category] = []
