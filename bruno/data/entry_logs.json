@@ -8,6 +8,45 @@
       "dislikes": "costs $10",
       "rating": "4",
       "visit_again": true
+    },
+    {
+      "name": "Saint Arnolds",
+      "date": "forever",
+      "company": "usually joe",
+      "location": "Near downtown",
+      "food_ordered": "Beer and food",
+      "likes": "yummy",
+      "dislikes": "nothing",
+      "rating": "5",
+      "visit_again": true
+    },
+    {
+      "name": "teset",
+      "date": "test",
+      "company": "teset",
+      "location": "test",
+      "food_ordered": "test",
+      "likes": "test",
+      "dislikes": "test",
+      "rating": "test",
+      "visit_again": false,
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "name": "Chick-Fil-A",
+      "date": "Test",
+      "company": "No",
+      "location": "Beltway 8 near apt",
+      "food_ordered": "Chicken",
+      "likes": "Yummy",
+      "dislikes": "Not a lot of food",
+      "rating": "4",
+      "visit_again": true,
+      "tags": [
+        "#fastfood"
+      ]
     }
   ],
   "coffee shop": [
@@ -42,6 +81,20 @@
       "visit_again": true,
       "tags": [
         "#group #  #solo"
+      ]
+    },
+    {
+      "name": "test",
+      "date": "test",
+      "location": "test",
+      "company": "test",
+      "drink_ordered": "test",
+      "seating_availability": false,
+      "study_work_friendly": false,
+      "rating": "test",
+      "visit_again": false,
+      "tags": [
+        "test"
       ]
     }
   ],
