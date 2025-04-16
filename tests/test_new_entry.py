@@ -33,5 +33,5 @@ def test_new_entry_restaurant():
             assert len(data["restaurant"]) == 1
             assert data["restaurant"][0]["name"] == "mcdonalds"
 
-        ### Run pytest tests/test/new_entry.py
+        ### Run pytest tests/test_new_entry.py
 
