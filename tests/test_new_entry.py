@@ -12,7 +12,6 @@ class TestNewEntryCommand(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp_dir:
             data_path = Path(tmp_dir) / "test.json"
             
-            # Simulated user input
             inputs = "\n".join([
                 "restaurant",         # category
                 "mcdonalds",          # name
@@ -25,7 +24,7 @@ class TestNewEntryCommand(unittest.TestCase):
                 "yes",                # visit_again
                 "#fastfood"           # tags
             ])
-
+            # still need to look at this and edit
             # Run the command with simulated input and custom data path
             result = runner.invoke(new, ["--data-path", str(data_path)], input=inputs)
             
