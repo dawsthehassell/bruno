@@ -108,5 +108,21 @@
       "rating": "4.5",
       "visit_again": true
     }
+  ],
+  "park": [
+    {
+      "name": "Memorial Park",
+      "date": "March 2025",
+      "location": "Near I10 and 610 west",
+      "company": "Joe sometimes",
+      "activities": "Run 5k",
+      "other_activities": "Walk, run, hike, relax",
+      "running": true,
+      "pet": true,
+      "visit_again": true,
+      "tags": [
+        "#run"
+      ]
+    }
   ]
 }
