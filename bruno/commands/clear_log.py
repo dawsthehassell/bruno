@@ -23,6 +23,7 @@ def clear_all(force):
         with open(DATA_PATH, "w") as f:
             json.dump({}, f, indent=2)
         click.echo("All entries have been deleted. Experience Log is now empty.")
+        return
     else:
         click.echo("Clear all action cancelled.")
         return
