@@ -6,6 +6,8 @@ __pycache__/
 # Virtual environment
 venv/
 .env/
+data/
+entry_logs.json
 
 # Distribution / packaging
 *.egg-info/
