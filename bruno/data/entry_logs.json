@@ -1,1 +1,33 @@
-{}
+{
+  "bar": [
+    {
+      "name": "axelrad",
+      "date": "today",
+      "location": "idk",
+      "company": "no",
+      "drink_ordered": "beer",
+      "live_events": "no",
+      "dislikes": "busy",
+      "vibe": "epic",
+      "rating": "5",
+      "visit_again": false,
+      "tags": "['#bar']"
+    }
+  ],
+  "coffee shop": [
+    {
+      "name": "test",
+      "date": "today",
+      "location": "test",
+      "company": "no",
+      "drink_ordered": "test",
+      "seating_availability": true,
+      "study_work_friendly": true,
+      "rating": "5",
+      "visit_again": false,
+      "tags": [
+        "#woo"
+      ]
+    }
+  ]
+}

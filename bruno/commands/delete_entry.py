@@ -19,7 +19,7 @@ def delete_entry():
     category = click.prompt("What experience category is the entry you want to delete from? (bar, restaurant, coffee shop, etc.)")
 
     if category not in data or not data[category]:
-        click.echo("No entries found under that category, try another category name!")
+        click.echo("No entries found under that category, try again with another category name!")
         return
     
     click.echo(f"\nEntries under category '{category}'")
