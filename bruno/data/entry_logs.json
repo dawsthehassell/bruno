@@ -2,7 +2,7 @@
   "bar": [
     {
       "name": "axelrad",
-      "date": "today",
+      "date": "4/19/25",
       "location": "idk",
       "company": "no",
       "drink_ordered": "beer",
@@ -10,8 +10,44 @@
       "dislikes": "busy",
       "vibe": "epic",
       "rating": "5",
-      "visit_again": false,
+      "visit_again": true,
       "tags": "['#bar']"
+    },
+    {
+      "name": "sarnies",
+      "date": "idk",
+      "location": "cancel test",
+      "company": "cancel",
+      "drink_ordered": "cancel",
+      "live_events": "cancel",
+      "dislikes": "cancel damnit",
+      "vibe": "cool",
+      "rating": "5",
+      "visit_again": true
+    },
+    {
+      "name": "home",
+      "date": "cancel",
+      "location": "cancel",
+      "company": "jiosfd",
+      "drink_ordered": "df",
+      "live_events": "df",
+      "dislikes": "d",
+      "vibe": "f",
+      "rating": "df",
+      "visit_again": true
+    },
+    {
+      "name": "idk",
+      "date": "test",
+      "location": "test",
+      "company": "test",
+      "drink_ordered": "test",
+      "live_events": "test",
+      "dislikes": "no",
+      "vibe": "tes",
+      "rating": "te",
+      "visit_again": false
     }
   ],
   "coffee shop": [
@@ -27,6 +63,40 @@
       "visit_again": false,
       "tags": [
         "#woo"
+      ]
+    }
+  ],
+  "restaurant": [
+    {
+      "name": "chipotle",
+      "date": "last monday",
+      "company": "no",
+      "location": "Belway 8",
+      "food_ordered": "bowl",
+      "likes": "yum",
+      "dislikes": "nothing",
+      "rating": "5",
+      "visit_again": true,
+      "tags": [
+        "#nice"
+      ]
+    }
+  ],
+  "park": [
+    {
+      "name": "memorial",
+      "date": "idk",
+      "location": "I10",
+      "company": "Joe",
+      "activities": "run",
+      "other_activities": "anything",
+      "running": true,
+      "pet": true,
+      "visit_again": true,
+      "tags": [
+        "#run",
+        "#pet",
+        "#5k"
       ]
     }
   ]

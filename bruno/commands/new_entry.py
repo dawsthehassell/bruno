@@ -102,11 +102,17 @@ def new(data_path):
         for field, message in prompts:
             if field in boolean_fields:
                 response = click.prompt(f"{message}").strip().lower()
+                if response.strip().lower() == "cancel":
+                    click.echo("New entry cancelled.")
+                    return
                 new_entry[field] = response == "yes"
             else:
                 new_entry[field] = click.prompt(f"{message}")
+                if new_entry[field] == "cancel":
+                    click.echo("New entry cancelled.")
+                    return
 
-    tags_input = click.prompt("Any hashtags or favorites? (ex: #fav, #group) (comma-separated, optional)", type=str).strip().lower()
+    tags_input = click.prompt("Any hashtags or favorites? (ex: #fav, #group) (comma-separated, optional)", type=str, default="", show_default=False).strip().lower()
     if tags_input:
         tags = [tag.strip() for tag in tags_input.split(",")]
         new_entry["tags"] = tags

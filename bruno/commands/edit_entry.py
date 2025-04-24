@@ -7,7 +7,7 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
 @click.command(name="edit", help="Load and edit a single entry from the entry log.")
 def edit_entry():
-    click.echo("\nStarting edit entry process...(type 'cancel' during the process to exit the edit process without saving.)\n")
+    click.echo("\nStarting edit entry process...(type 'cancel' during the process to exit the edit process without saving)\n")
 
     try:
         with open(DATA_PATH, "r") as f:
@@ -47,7 +47,7 @@ def edit_entry():
     for field, old_value in entry.items():
         if field in boolean_fields:
             response = click.prompt(f"{field} (current: {'yes' if old_value else 'no'})", default="yes" if old_value else "no", show_default=False).strip().lower()
-            if response == "cancel":
+            if response.strip().lower() == "cancel":
                 click.echo("Edit cancelled. No changes saved.")
                 return
             entry[field] = response == "yes"
