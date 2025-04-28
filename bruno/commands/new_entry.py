@@ -79,7 +79,6 @@ def new(data_path):
             ("type", "What was this type of event?"),
             ("location", "Location of event"),
             ("company", "Were you with anyone? If so, who?"),
-            ("persons", "Who did you attend the event with?"),
             ("highlight", "What were the highlights?"),
             ("rating", "What do you rate the experience out of 5?"),
             ("recurring", "Is this a recurring event (often) or pop up event (yearly, etc.)?"),

@@ -1,102 +1,31 @@
 {
-  "bar": [
-    {
-      "name": "axelrad",
-      "date": "4/19/25",
-      "location": "idk",
-      "company": "no",
-      "drink_ordered": "beer",
-      "live_events": "no",
-      "dislikes": "busy",
-      "vibe": "epic",
-      "rating": "5",
-      "visit_again": true,
-      "tags": "['#bar']"
-    },
-    {
-      "name": "sarnies",
-      "date": "idk",
-      "location": "cancel test",
-      "company": "cancel",
-      "drink_ordered": "cancel",
-      "live_events": "cancel",
-      "dislikes": "cancel damnit",
-      "vibe": "cool",
-      "rating": "5",
-      "visit_again": true
-    },
-    {
-      "name": "home",
-      "date": "cancel",
-      "location": "cancel",
-      "company": "jiosfd",
-      "drink_ordered": "df",
-      "live_events": "df",
-      "dislikes": "d",
-      "vibe": "f",
-      "rating": "df",
-      "visit_again": true
-    },
-    {
-      "name": "idk",
-      "date": "test",
-      "location": "test",
-      "company": "test",
-      "drink_ordered": "test",
-      "live_events": "test",
-      "dislikes": "no",
-      "vibe": "tes",
-      "rating": "te",
-      "visit_again": false
-    }
-  ],
-  "coffee shop": [
-    {
-      "name": "test",
-      "date": "today",
-      "location": "test",
-      "company": "no",
-      "drink_ordered": "test",
-      "seating_availability": true,
-      "study_work_friendly": true,
-      "rating": "5",
-      "visit_again": false,
-      "tags": [
-        "#woo"
-      ]
-    }
-  ],
   "restaurant": [
     {
       "name": "chipotle",
-      "date": "last monday",
-      "company": "no",
-      "location": "Belway 8",
+      "date": "4/28/25",
+      "company": "No",
+      "location": "Beltway 8",
       "food_ordered": "bowl",
-      "likes": "yum",
+      "likes": "Yummy",
       "dislikes": "nothing",
+      "rating": "5",
+      "visit_again": true
+    }
+  ],
+  "bar": [
+    {
+      "name": "Axelrad",
+      "date": "4/28",
+      "location": "Midtown",
+      "company": "Joe",
+      "drink_ordered": "Beer",
+      "live_events": "Yes, jazz",
+      "dislikes": "busy",
+      "vibe": "chill",
       "rating": "5",
       "visit_again": true,
       "tags": [
-        "#nice"
-      ]
-    }
-  ],
-  "park": [
-    {
-      "name": "memorial",
-      "date": "idk",
-      "location": "I10",
-      "company": "Joe",
-      "activities": "run",
-      "other_activities": "anything",
-      "running": true,
-      "pet": true,
-      "visit_again": true,
-      "tags": [
-        "#run",
-        "#pet",
-        "#5k"
+        "#livemusic"
       ]
     }
   ]
