@@ -10,7 +10,7 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 def new(data_path):
     click.echo("Starting a new entry log...")
     try:
-        with open(DATA_PATH, "r") as f:
+        with open(data_path, "r") as f:
             data = json.load(f)
     except FileNotFoundError:
         data = {}
