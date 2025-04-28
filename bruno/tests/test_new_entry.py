@@ -13,10 +13,32 @@ class TestNewEntry(unittest.TestCase):
     def tearDown(self):
         self.temp_dir.cleanup()
 
+    def create_and_check_entry(self, category, expected_fields, extra_inputs):
+        ### Helper function to create and verify any new entry ###
+        fake_inputs = f"{category}\n{expected_fields['name']}\n{extra_inputs}"
+        
+        result = self.runner.invoke(new, ["--data-path", self.data_path], input=fake_inputs)
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn("New entry added successfully!", result.output)
+
+        with open(self.data_path, "r") as f:
+            data = json.load(f)
+
+        self.assertIn(category, data)
+        self.assertEqual(len(data[category]), 1)
+        
+        entry = data[category][0]
+
+        for key, value in expected_fields.items():
+            self.assertEqual(entry.get(key), value)
+
     def test_create_new_restaurant_entry(self):
-        fake_inputs = (
-            "restaurant\n"
-            "Chipotle\n"
+        expected_fields = {
+            "name": "Chipotle",
+            "rating": "5",
+            "visit_again": True,
+        }
+        extra_inputs = (
             "4/28/25\n"
             "No\n"
             "Beltway 8\n"
@@ -27,19 +49,27 @@ class TestNewEntry(unittest.TestCase):
             "yes\n"
             "\n"
         )
+        self.create_and_check_entry("restaurant", expected_fields, extra_inputs)
 
-        result = self.runner.invoke(new, ["--data-path", self.data_path], input=fake_inputs)
-        self.assertEqual(result.exit_code, 0)
-        self.assertIn("New entry added successfully!", result.output)
-
-        with open(self.data_path, "r") as f:
-            data = json.load(f)
-
-        self.assertIn("restaurant", data)
-        self.assertEqual(len(data["restaurant"]), 1)
-        self.assertEqual(data["restaurant"][0]["name"], "Chipotle")
-        self.assertEqual(data["restaurant"][0]["rating"], "5")
-        self.assertEqual(data["restaurant"][0]["visit_again"], True)
+    def test_create_new_bar_entry(self):
+        expected_fields = {
+            "name": "Axelrad",
+            "rating": "5",
+            "visit_again": True,
+        }
+        extra_inputs = (
+        "4/28\n"
+        "Joe\n"
+        "Midtown\n"
+        "Beer\n"
+        "Yes, jazz\n"
+        "busy\n"
+        "chill\n"
+        "5\n"
+        "yes\n"
+        "\n"
+        )
+        self.create_and_check_entry("bar", expected_fields, extra_inputs)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,1 +1,19 @@
-{}
+{
+  "bar": [
+    {
+      "name": "Axelrad",
+      "date": "4/28/25",
+      "location": "Midtown",
+      "company": "Joe",
+      "drink_ordered": "Beer",
+      "live_events": "Yes, Jazz",
+      "dislikes": "Busy",
+      "vibe": "Chill",
+      "rating": "5",
+      "visit_again": true,
+      "tags": [
+        "#outside"
+      ]
+    }
+  ]
+}
