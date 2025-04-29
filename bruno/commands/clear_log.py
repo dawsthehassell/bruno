@@ -8,8 +8,19 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 @click.command(name="clear-all")
 @click.option("--force", is_flag=True, help="Skips all warnings and clears entry log immediately. Use with caution!")
 @click.option("--data-path", default=DATA_PATH, help="Custom data path used for testing")
-def clear_all(force, data_path):
+@click.option("--dry-run", is_flag=True, help="Simulates the clear-all action without deleting anything.")
+def clear_all(dry_run, force, data_path):
     click.echo("Starting Clear All entries from log process...")
+
+    if dry_run:
+        try:
+            with open(data_path, "r") as f:
+                data = json.load(f)
+            total_entries = sum(len(entries) for entries in data.values())
+            click.echo(f"Dry run: This action would delete {len(data)} category(ies) and {total_entries} total entries.")
+        except FileNotFoundError:
+            click.echo("Dry run: No data found, nothing to delete.")
+        return
 
     if force:
         click.echo("Clearing all entries immediately with --force...")

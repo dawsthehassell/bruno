@@ -25,6 +25,18 @@ class TestNewEntry(unittest.TestCase):
     def tearDown(self):
         self.temp_dir.cleanup()
 
+    def test_clear_all_dry_run(self):
+        result = self.runner.invoke(clear_all, ["--dry-run", "--data-path", self.data_path])
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn("Dry run", result.output)
+        self.assertIn("1 total entries", result.output)
+
+        with open(self.data_path, "r") as f:
+            data_after = json.load(f)
+
+        self.assertIn("restaurant", data_after)
+        self.assertEqual(len(data_after["restaurant"]), 1)
+    
     def test_clear_all_with_prompt_yes(self):
         with open(self.data_path, "r") as f:
             data = json.load(f)
