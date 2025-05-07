@@ -24,8 +24,22 @@ class TestNewEntry(unittest.TestCase):
         self.temp_dir.cleanup()
 
     def test_delete_entry_success(self):
-        user_input = "restaurant\n1\nyes\n"
-        result = self.runner.invoke(delete_entry, input=user_input, env={"DATA_PATH": self.data_path})
+        self.initial_data = {
+            "restaurant": [
+                {"name": "Chipotle", "date": "4/28/25"},
+                {"name": "Torchy's", "date": "4/27/25"}
+            ]
+        }
+
+        with open(self.data_path, "w") as f:
+            json.dump(self.initial_data, f, indent=2)
+        
+        user_input = (
+            "restaurant\n"
+            "1\n"
+            "yes\n"
+        )
+        result = self.runner.invoke(delete_entry, ["--data-path", self.data_path], input=user_input)
 
         self.assertEqual(result.exit_code, 0)
         self.assertIn("Selected entry has been deleted successfully.", result.output)
@@ -38,3 +52,5 @@ class TestNewEntry(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    # test currently fails btw
