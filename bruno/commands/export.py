@@ -8,11 +8,12 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
 @click.command("export", help="Exports the entry log to a .txt or .csv file for easy viewing and sharing.")
 @click.option("--format", type=click.Choice(["txt", "csv"]), default="txt", help="Choose export format .txt or .csv")
-def export(format):
+@click.option("--data-path", default=DATA_PATH, help="Custom data path used for testing")
+def export(format, data_path):
     click.echo("Starting export process...")
 
     try:
-        with open(DATA_PATH, "r") as f:
+        with open(data_path, "r") as f:
             data = json.load(f)
     except FileNotFoundError:
         click.echo("No entries found.")
@@ -23,7 +24,7 @@ def export(format):
     if not export_path.endswith(f".{format}"):
         export_path += f".{format}"
 
-    export_dir = os.path.join(BASE_DIR, "..", "data")
+    export_dir = os.path.dirname(data_path)
     export_full_path = os.path.join(export_dir, export_path)
 
     if os.path.exists(export_full_path):
@@ -57,7 +58,7 @@ def export(format):
 
         with open(export_full_path, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=columns)
-            writer.writeheader
+            writer.writeheader()
             
             for category, entries in data.items():
                 for entry in entries:
