@@ -7,7 +7,7 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
 @click.command(name="delete", help="Deletes a single entry from the log.")
 @click.option("--data-path", default=DATA_PATH, help="Custom data path option for testing")
-def delete_entry(data_path):
+def delete(data_path):
     click.echo("Starting delete entry process...")
 
     try:

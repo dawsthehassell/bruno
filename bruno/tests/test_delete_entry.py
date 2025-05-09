@@ -2,9 +2,9 @@ import unittest
 import json
 import tempfile
 from click.testing import CliRunner
-from bruno.commands.delete_entry import delete_entry
+from bruno.commands.delete_entry import delete
 
-class TestNewEntry(unittest.TestCase):
+class TestDeleteSingleEntry(unittest.TestCase):
     def setUp(self):
         self.runner = CliRunner()
         self.temp_dir = tempfile.TemporaryDirectory()
@@ -39,7 +39,7 @@ class TestNewEntry(unittest.TestCase):
             "1\n"
             "yes\n"
         )
-        result = self.runner.invoke(delete_entry, ["--data-path", self.data_path], input=user_input)
+        result = self.runner.invoke(delete, ["--data-path", self.data_path], input=user_input)
 
         self.assertEqual(result.exit_code, 0)
         self.assertIn("Selected entry has been deleted successfully.", result.output)
@@ -67,7 +67,7 @@ class TestNewEntry(unittest.TestCase):
             "no\n"
         )
 
-        result = self.runner.invoke(delete_entry, ["--data-path", self.data_path], input=user_input)
+        result = self.runner.invoke(delete, ["--data-path", self.data_path], input=user_input)
         self.assertEqual(result.exit_code, 0)
         self.assertIn("Deletion cancelled.", result.output)
 
@@ -93,7 +93,7 @@ class TestNewEntry(unittest.TestCase):
             "no\n"
         )
 
-        result = self.runner.invoke(delete_entry, ["--data-path", self.data_path], input=user_input)
+        result = self.runner.invoke(delete, ["--data-path", self.data_path], input=user_input)
         self.assertEqual(result.exit_code, 0)
         self.assertIn("Invalid selection!", result.output)
 
@@ -117,7 +117,7 @@ class TestNewEntry(unittest.TestCase):
             "bar\n"
         )
 
-        result = self.runner.invoke(delete_entry, ["--data-path", self.data_path], input=user_input)
+        result = self.runner.invoke(delete, ["--data-path", self.data_path], input=user_input)
         self.assertEqual(result.exit_code, 0)
         self.assertIn("No entries found under that category, try again with another category name!", result.output)
 
