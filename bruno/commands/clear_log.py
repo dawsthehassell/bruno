@@ -1,15 +1,15 @@
 import click
 import os
 import json
+from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
 @click.command(name="clear-all")
 @click.option("--force", is_flag=True, help="Skips all warnings and clears entry log immediately. Use with caution!")
-@click.option("--data-path", default=DATA_PATH, help="Custom data path used for testing")
 @click.option("--dry-run", is_flag=True, help="Simulates the clear-all action without deleting anything.")
+@click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def clear_all(dry_run, force, data_path):
+    ensure_data_dir_exists()
     click.echo("Starting Clear All entries from log process...")
 
     if dry_run:

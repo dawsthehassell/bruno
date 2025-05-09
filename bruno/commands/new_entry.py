@@ -1,13 +1,13 @@
 import click
 import os
 import json
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
+from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command(name="new", help="Create a new entry to be saved into the log! Just follow the prompts.")
-@click.option("--data-path", default=DATA_PATH, help="Custom path to save data for testing")
+@click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def new(data_path):
+    click.echo(f"Data path used: {data_path}") 
+    ensure_data_dir_exists(data_path)
     click.echo("Starting a new entry log...")
     try:
         with open(data_path, "r") as f:

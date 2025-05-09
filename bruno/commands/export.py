@@ -2,14 +2,13 @@ import click
 import os
 import json
 import csv
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
+from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command("export", help="Exports the entry log to a .txt or .csv file for easy viewing and sharing.")
 @click.option("--format", type=click.Choice(["txt", "csv"]), default="txt", help="Choose export format .txt or .csv")
-@click.option("--data-path", default=DATA_PATH, help="Custom data path used for testing")
+@click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def export(format, data_path):
+    ensure_data_dir_exists()
     click.echo("Starting export process...")
 
     try:

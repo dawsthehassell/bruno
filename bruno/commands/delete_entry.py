@@ -1,13 +1,12 @@
 import click
 import os
 import json
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
+from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command(name="delete", help="Deletes a single entry from the log.")
-@click.option("--data-path", default=DATA_PATH, help="Custom data path option for testing")
+@click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def delete(data_path):
+    ensure_data_dir_exists()
     click.echo("Starting delete entry process...")
 
     try:
