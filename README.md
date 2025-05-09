@@ -12,20 +12,18 @@
 Running on Python 3.7 or newer is recommended.
 
 1. **Clone the repository:**
-    git clone https://github.com/dawsthehassell/bruno.git
-    
-    cd bruno
+    a. git clone https://github.com/dawsthehassell/bruno.git
+    b. cd bruno
 
 2. **Create a virtual enviornment (optional, but recommended):**
-    python3 -m venv venv
-
-    source venv/bin/activate  OR  on Windows: venv\Scripts\activate
+    a. python3 -m venv venv
+    b. source venv/bin/activate  OR  on Windows: venv\Scripts\activate
 
 3. **Install dependencies:**
-    pip install click setuptools
+    a. pip install click setuptools
 
 4. **Install the package locally in editable mode:**
-    pip install -e .
+    a. pip install -e .
 
 This will install the bruno CLI command and link it to your local development files so changes are reflected immediately.
 
