@@ -1,5 +1,5 @@
 # Bruno - Your Personal Experience Logger
-**Bruno**, aptly named on the creative Manchester United midfielder, is customizable command-line tool for tracking experiences like restaurants, coffee shops, parks, events, and more. Bruno helps you log, search, and reflect on your outings with ease and flexibility.
+**Bruno**, aptly named on the creative Manchester United midfielder, is customizable command-line tool to assist you in tracking experiences like restaurants, coffee shops, parks, events, and more. Bruno helps you log, search, and reflect on your outings with ease and flexibility.
 
 ### FEATURES
 - Log experiences by category with tailored prompts
@@ -12,11 +12,11 @@
 Running on Python 3.7 or newer is recommended.
 
 1. **Clone the repository:**
-    git clone https://github.com/dawsthehassell/bruno.git
+    git clone https://github.com/dawsthehassell/bruno.git\n
     cd bruno
 
 2. **Create a virtual enviornment (optional, but recommended):**
-    python3 -m venv venv
+    python3 -m venv venv\n
     source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. **Install dependencies:**
@@ -28,13 +28,14 @@ Running on Python 3.7 or newer is recommended.
 This will install the bruno CLI command and link it to your local development files so changes are reflected immediately.
 
 ### CORE FUNCTIONALITY & FEATURES
-Bruno has six primary commands:
-    bruno new         # Add a new entry
-    bruno search      # Search entries
-    bruno edit        # Edit an existing entry
-    bruno delete      # Delete an entry
-    bruno clear-all   # Clear entire entry log
-    bruno export      # Export logs to .txt or .csv
+Bruno has six primary commands:\n
+
+    bruno new         # Add a new entry\n
+    bruno search      # Search entries\n
+    bruno edit        # Edit an existing entry\n
+    bruno delete      # Delete an entry\n
+    bruno clear-all   # Clear entire entry log\n
+    bruno export      # Export logs to .txt or .csv\n
 
 ### EXAMPLE USAGE
     python3 bruno new
