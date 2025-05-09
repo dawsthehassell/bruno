@@ -88,5 +88,28 @@ class TestExportCommand(unittest.TestCase):
             content = f.read()
         self.assertEqual(content, "Old content")
 
+    def test_export_txt_confirm_overwrite(self):
+        export_name = "confirm_overwrite_test.txt"
+        export_filename = f"{export_name}"
+        export_full_path = os.path.join(self.temp_dir.name, export_filename)
+
+        with open(export_full_path, "w") as f:
+            f.write("Old content that should be overwritten")
+        
+        user_input = f"{export_name}\nyes\n"
+
+        result = self.runner.invoke(export, ["--data-path", self.data_path], input=user_input)
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn("Entry log successfully exported", result.output)
+        self.assertTrue(os.path.exists(export_full_path))
+
+        with open(export_full_path, "r") as f:
+            content = f.read()
+
+        self.assertNotIn("Old content", content)
+        self.assertIn("Chipotle", content)
+        self.assertIn("Food_ordered: bowl", content)
+
 if __name__ == "__main__":
     unittest.main()

@@ -6,11 +6,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
 @click.command(name="edit", help="Load and edit a single entry from the entry log.")
-def edit_entry():
+@click.option("--data-path", default=DATA_PATH, help="Custom data path used for testing")
+def edit_entry(data_path):
     click.echo("\nStarting edit entry process...(type 'cancel' during the process to exit the edit process without saving)\n")
 
     try:
-        with open(DATA_PATH, "r") as f:
+        with open(data_path, "r") as f:
             data = json.load(f)
     except FileNotFoundError:
         click.echo("No entries found.")
@@ -61,7 +62,7 @@ def edit_entry():
     confirm = click.prompt("Save new changes? (yes/no)").strip().lower()
     
     if confirm == "yes":
-        with open(DATA_PATH, "w") as f:
+        with open(data_path, "w") as f:
             json.dump(data, f, indent=2)
             click.echo("Changes have been saved successfully!")
     else:
