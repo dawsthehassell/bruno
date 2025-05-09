@@ -5,7 +5,7 @@ import json
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
-@click.command(name="search")
+@click.command(name="search", help="Search specific entries by name, category, visit_again, or see them all!")
 @click.option("--category", default=None, help="Filter by category (ex: restaurant, coffee shop, etc.)")
 @click.option("--term", default=None, help="Search term to look for in entry log")
 @click.option("--visit_again", is_flag=True, help="Search for all results with visit_again = True data")
@@ -54,4 +54,4 @@ def search_entries(term, category, visit_again, data_path):
             for key, value in entry.items():
                 print(f"   {key.capitalize()}: {value}")
     else:
-        print("No results found!")
+        click.echo("No results found!")

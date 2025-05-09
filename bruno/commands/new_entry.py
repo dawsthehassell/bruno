@@ -5,7 +5,7 @@ import json
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "..", "data", "entry_logs.json")
 
-@click.command(name="new")
+@click.command(name="new", help="Create a new entry to be saved into the log! Just follow the prompts.")
 @click.option("--data-path", default=DATA_PATH, help="Custom path to save data for testing")
 def new(data_path):
     click.echo("Starting a new entry log...")
@@ -92,7 +92,7 @@ def new(data_path):
     }
 
     if category not in category_prompts:
-        print("Invalid category! Please choose a valid experience category.")
+        click.echo("Invalid category! Please choose a valid experience category.")
         return
     else:
         new_entry = {}
