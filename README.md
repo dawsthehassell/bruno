@@ -11,21 +11,30 @@
 ### SETUP INSTRUCTIONS
 Running on Python 3.7 or newer is recommended.
 
+To install Bruno globally and use it as a command-line tool, follow these steps:
+
 1. **Clone the repository:**
     ```
     git clone https://github.com/dawsthehassell/bruno.git
     cd bruno
-2. **Create a virtual enviornment (optional, but recommended):**
+2. **Install pipx (if you don't have it already):**
     ```
-    python3 -m venv venv
-    source venv/bin/activate  OR  on Windows: venv\Scripts\activate
-3. **Install dependencies:**
+    brew install pipx  # On MacOS using Homebrew
+    python3 -m pip install --user pipx  # For other systems
+3. **Install Bruno globally using pipx:**
     ```
-    pip install click setuptools
-4. **Install the package locally in editable mode:**
+    pipx install .
+This will install the Bruno in an isolated enviorment, and you'll be able to run any Bruno command globally! Bruno's Entry Log will be saved in the user's main/home directory (/Users/yourusername/.bruno/entry_logs.json)
+
+### DEVELOPING BRUNO WITH pipx (editable mode)
+If you'd like to actively develop Bruno and want changes to reflect immediately without constant reinstallation, use the following command:
     ```
-    pip install -e .
-This will install the bruno CLI command and link it to your local development files so changes are reflected immediately.
+    pipx install --editable .
+This command will install Bruno in editable mode, so changes will be reflected immediately. 
+
+### UNINSTALLING BRUNO
+    ``
+    pipx uninstall bruno
 
 ### CORE FUNCTIONALITY & FEATURES
 Bruno has six primary commands:

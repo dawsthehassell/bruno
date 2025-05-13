@@ -2,13 +2,13 @@ import click
 import os
 import json
 import csv
-from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
+from bruno.commands.config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command("export", help="Exports the entry log to a .txt or .csv file for easy viewing and sharing.")
 @click.option("--format", type=click.Choice(["txt", "csv"]), default="txt", help="Choose export format .txt or .csv")
 @click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def export(format, data_path):
-    ensure_data_dir_exists()
+    ensure_data_dir_exists(data_path)
     click.echo("Starting export process...")
 
     try:

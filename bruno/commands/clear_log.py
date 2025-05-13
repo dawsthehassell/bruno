@@ -1,7 +1,7 @@
 import click
 import os
 import json
-from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
+from bruno.commands.config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 
 @click.command(name="clear-all")
@@ -9,7 +9,7 @@ from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 @click.option("--dry-run", is_flag=True, help="Simulates the clear-all action without deleting anything.")
 @click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def clear_all(dry_run, force, data_path):
-    ensure_data_dir_exists()
+    ensure_data_dir_exists(data_path)
     click.echo("Starting Clear All entries from log process...")
 
     if dry_run:

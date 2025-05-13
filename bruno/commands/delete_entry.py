@@ -1,12 +1,12 @@
 import click
 import os
 import json
-from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
+from bruno.commands.config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command(name="delete", help="Deletes a single entry from the log.")
 @click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def delete(data_path):
-    ensure_data_dir_exists()
+    ensure_data_dir_exists(data_path)
     click.echo("Starting delete entry process...")
 
     try:

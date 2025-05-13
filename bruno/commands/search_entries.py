@@ -1,7 +1,7 @@
 import click
 import os
 import json
-from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
+from bruno.commands.config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command(name="search", help="Search specific entries by name, category, visit_again, or see them all!")
 @click.option("--category", default=None, help="Filter by category (ex: restaurant, coffee shop, etc.)")
@@ -9,7 +9,7 @@ from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 @click.option("--visit_again", is_flag=True, help="Search for all results with visit_again = True data")
 @click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def search_entries(term, category, visit_again, data_path):
-    ensure_data_dir_exists()
+    ensure_data_dir_exists(data_path)
     try:
         with open(data_path, "r") as f:
             data = json.load(f)

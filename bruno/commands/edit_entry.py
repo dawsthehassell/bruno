@@ -1,12 +1,12 @@
 import click
 import os
 import json
-from config import DEFAULT_DATA_PATH, ensure_data_dir_exists
+from bruno.commands.config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 @click.command(name="edit", help="Load and edit a single entry from the entry log.")
 @click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
 def edit_entry(data_path):
-    ensure_data_dir_exists()
+    ensure_data_dir_exists(data_path)
     click.echo("\nStarting edit entry process...(type 'cancel' during the process to exit the edit process without saving)\n")
 
     try:
