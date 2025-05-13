@@ -28,7 +28,7 @@ This will install the Bruno in an isolated enviorment, and you'll be able to run
 
 ### DEVELOPING BRUNO WITH pipx (editable mode)
 If you'd like to actively develop Bruno and want changes to reflect immediately without constant reinstallation, use the following command:
-    ```
+    ``
     pipx install --editable .
 This command will install Bruno in editable mode, so changes will be reflected immediately. 
 
