@@ -64,10 +64,10 @@ Bruno has six primary commands:
     ├── edit_entry.py
     ├── export.py
     ├── clear_log.py
+    ├── config.py         # Sets data path
     tests/
     └── test_*.py         # Unit tests
-    data/
-    └── entry_logs.json   # Stored log
+    
 
 ### LISENCE
 This project is licensed under the MIT License.
