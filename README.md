@@ -39,6 +39,13 @@ To uninstall Bruno, it's as simple as:
     pipx uninstall bruno
     ```
 
+### OPENING BRUNO'S DATA IN FILE EXPLORER / FINDER
+To view Bruno's data directory (located ~/Users/yourusername/.bruno/), you can simply run:
+    ```
+    open ~/.bruno
+    ```
+This takes you to the directory where the entry_logs.json is stored. 
+
 ### CORE FUNCTIONALITY & FEATURES
 Bruno has six primary commands:
 
