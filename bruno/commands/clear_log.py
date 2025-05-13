@@ -4,7 +4,7 @@ import json
 from bruno.commands.config import DEFAULT_DATA_PATH, ensure_data_dir_exists
 
 
-@click.command(name="clear-all")
+@click.command(name="clear-all", help="Clears all entries in the Log with a warning confirmation before deletion.")
 @click.option("--force", is_flag=True, help="Skips all warnings and clears entry log immediately. Use with caution!")
 @click.option("--dry-run", is_flag=True, help="Simulates the clear-all action without deleting anything.")
 @click.option("--data-path", default=DEFAULT_DATA_PATH, help="Path to entry log JSON file")
